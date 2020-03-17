@@ -1,0 +1,51 @@
+path {
+  cursor: pointer;
+}
+
+.center {
+  text-align: center;
+}
+
+.tooltipSVG {
+  background: #1976d2;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+}
+
+.danger {
+  background: #dc3545 !important;
+  color: white !important;
+}
+
+.recovere {
+  background: #007bff !important;
+  color: white !important;
+}
+
+.dead {
+  background: #343a40 !important;
+  color: white !important;
+}
+
+.row-center {
+  justify-content: center;
+}
+
+.warning {
+  background: #ffc107 !important;
+  color: white !important;
+}
+
+.watermark {
+  opacity: 0.5;
+  color: BLACK;
+  position: fixed;
+  top: auto;
+  left: 80%;
+}
+
+.hours {
+  margin: 5px;
+}
