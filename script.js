@@ -47,7 +47,7 @@ function updateDashBoard(data) {
 
 function updateMap() {
   // ainda não hospedado na nuvem interna
-  const jsonUrl = "https://api.myjson.com/bins/d49iu";
+  const jsonUrl = "https://api.myjson.com/bins/vr0we";
   fetch(jsonUrl).then(function(resolver) {
     const ufs = resolver.UF;
     const svg = document.querySelector("svg");
