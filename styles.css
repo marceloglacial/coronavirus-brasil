@@ -2,6 +2,13 @@ path {
   cursor: pointer;
 }
 
+h1, h2, h3 {
+  font-family: 'Quicksand', sans-serif;
+}
+small {
+  font-family: 'Quicksand', sans-serif;
+}
+
 .center {
   text-align: center;
 }

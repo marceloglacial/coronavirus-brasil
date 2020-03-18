@@ -22,9 +22,11 @@ function fetch(theUrl) {
 }
 
 function loadApp(event) {
+  isToShowSpinner();
   Promise.all([
     fetch("https://covid19.mathdro.id/api/countries/brazil"),
   ]).then(function(resolver) {
+    isToShowSpinner(false);
     updateDashBoard(resolver);
   }).catch(function (error) {
     console.warn(error);
@@ -108,4 +110,11 @@ function hideTooltip() {
 
 function getToolTip() {
   return document.querySelector(".tooltipSVG");
+}
+
+function isToShowSpinner(isload = true) {
+  const spinners = document.querySelectorAll(".spinner");
+  for (spinner of spinners) {
+    spinner.style.display = isload ? "block" : "none";
+  }
 }
