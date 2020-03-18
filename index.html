@@ -4,26 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Pandemia de Coronavírus (COVID-19) no Brasil Cronologia dos Eventos</title>
-    <meta property="og:site_name" content="Pandemia de Coronavírus (COVID-19) no Brasil">
+    <title>
+      Pandemia de Coronavírus (COVID-19) no Brasil Cronologia dos Eventos
+    </title>
+    <meta
+      property="og:site_name"
+      content="Pandemia de Coronavírus (COVID-19) no Brasil"
+    />
     <meta property="og:title" content="Coronavírus Brasil" />
-    <meta property="og:description" content="Pandemia de Coronavírus (COVID-19) no Brasil" />
-    <meta property="og:image" itemprop="image" content="https://github.com/joelbarbosa/coronavirus-brasil/blob/master/Brazil_Blank_Map_light.svg">
+    <meta
+      property="og:description"
+      content="Pandemia de Coronavírus (COVID-19) no Brasil"
+    />
+    <meta
+      property="og:image"
+      itemprop="image"
+      content="https://github.com/joelbarbosa/coronavirus-brasil/blob/master/Brazil_Blank_Map_light.svg"
+    />
     <meta property="og:type" content="website" />
     <link
       rel="stylesheet"
       href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css"
     />
     <link rel="stylesheet" href="styles.css" />
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161117654-1"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-161117654-1"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag() {
+        dataLayer.push(arguments);
+      }
       gtag('js', new Date());
 
       gtag('config', 'UA-161117654-1');
@@ -60,6 +80,13 @@
           <h4>Mortes</h4>
           <div class="section double-padded dead">
             <h1 id="dead"></h1>
+            <div class="spinner"></div>
+          </div>
+        </div>
+        <div class="card danger">
+          <h4>Taxa de Motalidade</h4>
+          <div class="section double-padded danger">
+            <h1 id="mortal"></h1>
             <div class="spinner"></div>
           </div>
         </div>

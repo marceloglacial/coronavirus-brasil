@@ -1,10 +1,10 @@
 const HEAT_COLOR = {
-  low: "#ffdcdc",
-  medium: "#fb8d8d",
-  high: "#b61b1b"
+  low: '#ffdcdc',
+  medium: '#fb8d8d',
+  high: '#b61b1b'
 };
 
-document.getElementById("svg2").addEventListener("load", function() {
+document.getElementById('svg2').addEventListener('load', function() {
   loadApp();
 });
 
@@ -16,43 +16,46 @@ function fetch(theUrl) {
         resolver(JSON.parse(xmlHttp.responseText));
       }
     };
-    xmlHttp.open("GET", theUrl, true);
+    xmlHttp.open('GET', theUrl, true);
     xmlHttp.send(null);
   });
 }
 
 function loadApp(event) {
   isToShowSpinner();
-  Promise.all([
-    fetch("https://covid19.mathdro.id/api/countries/brazil"),
-  ]).then(function(resolver) {
-    isToShowSpinner(false);
-    updateDashBoard(resolver);
-  }).catch(function (error) {
-    console.warn(error);
-  });
+  Promise.all([fetch('https://covid19.mathdro.id/api/countries/brazil')])
+    .then(function(resolver) {
+      isToShowSpinner(false);
+      updateDashBoard(resolver);
+    })
+    .catch(function(error) {
+      console.warn(error);
+    });
   updateMap();
 }
 
 function updateDashBoard(data) {
-  console.log(data)
-  const confirmed = document.getElementById("confirmed");
-  const recovered = document.getElementById("recovere");
-  const dead = document.getElementById("dead");
-  const lastupdate = document.getElementById("lastupdate");
+  console.log(data);
+  const confirmed = document.getElementById('confirmed');
+  const recovered = document.getElementById('recovere');
+  const dead = document.getElementById('dead');
+  const mortal = document.getElementById('mortal');
+  const lastupdate = document.getElementById('lastupdate');
 
   confirmed.innerText = data[0].confirmed.value;
   recovered.innerText = data[0].recovered.value;
   dead.innerText = data[0].deaths.value;
   lastupdate.innerText = formatDate(data[0].lastUpdate);
+  mortal.innerText =
+    ((data[0].deaths.value / data[0].confirmed.value) * 100).toFixed(2) + '%';
 }
 
 function updateMap() {
   // ainda não hospedado na nuvem interna
-  const jsonUrl = "https://api.myjson.com/bins/vr0we";
+  const jsonUrl = 'https://api.myjson.com/bins/vr0we';
   fetch(jsonUrl).then(function(resolver) {
     const ufs = resolver.UF;
-    const svg = document.querySelector("svg");
+    const svg = document.querySelector('svg');
     svg.onmouseleave = hideTooltip();
     // não tem uma lógica ainda para o calor
     // esperar implementar api por estado dinamico
@@ -75,7 +78,7 @@ function updateMap() {
 
 function formatNumberMinorZero(num) {
   if (num < 10) {
-    num = "0" + num;
+    num = '0' + num;
   }
   return num;
 }
@@ -93,28 +96,24 @@ function formatDate(dateStr) {
 
 function showTooltip(e, estado) {
   let tooltip = getToolTip();
-  tooltip.innerHTML = `<h5>${
-    estado.total
-  }<small style="color: white !important">Total Casos ${
-    estado.nome
-  }</small></h5>`;
-  tooltip.style.display = "block";
-  tooltip.style.left = e.pageX + 10 + "px";
-  tooltip.style.top = e.pageY + 10 + "px";
+  tooltip.innerHTML = `<h5>${estado.total}<small style="color: white !important">Total Casos ${estado.nome}</small></h5>`;
+  tooltip.style.display = 'block';
+  tooltip.style.left = e.pageX + 10 + 'px';
+  tooltip.style.top = e.pageY + 10 + 'px';
 }
 
 function hideTooltip() {
   var tooltip = getToolTip();
-  tooltip.style.display = "none";
+  tooltip.style.display = 'none';
 }
 
 function getToolTip() {
-  return document.querySelector(".tooltipSVG");
+  return document.querySelector('.tooltipSVG');
 }
 
 function isToShowSpinner(isload = true) {
-  const spinners = document.querySelectorAll(".spinner");
+  const spinners = document.querySelectorAll('.spinner');
   for (spinner of spinners) {
-    spinner.style.display = isload ? "block" : "none";
+    spinner.style.display = isload ? 'block' : 'none';
   }
 }
