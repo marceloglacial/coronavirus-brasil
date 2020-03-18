@@ -1,6 +1,6 @@
 # Coronavírus (COVID-19) Brasil
 Pandemia de Coronavírus (COVID-19) no Brasil Cronologia dos Eventos
-[Site Oline](https://joelbarbosa.github.io/coronavirus-brasil/index.html).
+[Site Oline](https://joelbarbosa.github.io/coronavirus-brasil/).
 
 ## Status
 Acompanhe em tempo real os casos no Brasil
