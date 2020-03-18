@@ -24,25 +24,25 @@ function fetch(theUrl) {
 function loadApp(event) {
   Promise.all([
     fetch("https://covid19.mathdro.id/api/countries/brazil"),
-    fetch("https://corona.lmao.ninja/countries/brazil")
   ]).then(function(resolver) {
     updateDashBoard(resolver);
+  }).catch(function (error) {
+    console.warn(error);
   });
   updateMap();
 }
 
 function updateDashBoard(data) {
+  console.log(data)
   const confirmed = document.getElementById("confirmed");
   const recovered = document.getElementById("recovere");
   const dead = document.getElementById("dead");
   const lastupdate = document.getElementById("lastupdate");
-  const lastDate = document.getElementById("lastDate");
 
   confirmed.innerText = data[0].confirmed.value;
   recovered.innerText = data[0].recovered.value;
   dead.innerText = data[0].deaths.value;
-  lastupdate.innerText = data[1].todayCases;
-  lastDate.innerText = formatDate(data[0].lastUpdate);
+  lastupdate.innerText = formatDate(data[0].lastUpdate);
 }
 
 function updateMap() {
