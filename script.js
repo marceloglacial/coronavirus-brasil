@@ -22,15 +22,6 @@ function fetch(theUrl) {
 }
 
 function loadApp(event) {
-  const paths = document.querySelector("#path72");
-  paths.addEventListener("mouseover", e => {
-    // showTooltip(e, "This is blue");
-  });
-
-  paths.addEventListener("mouseout", () => {
-    hideTooltip();
-  });
-
   Promise.all([
     fetch("https://covid19.mathdro.id/api/countries/brazil"),
     fetch("https://corona.lmao.ninja/countries/brazil")
